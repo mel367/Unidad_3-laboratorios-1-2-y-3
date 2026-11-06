@@ -1,0 +1,16 @@
+Servidor de ejemplo: PostgreSQL 16 / base comercial
+Fechas, PID, IP y resultados siguientes son ficticios y solo ilustran el formato esperado.
+
+2026-11-05 18:02:11.104 CST [4101] user=postgres db=comercial app=psql client=[local] LOG: connection authorized: user=postgres database=comercial
+2026-11-05 18:04:22.221 CST [4120] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG: connection authorized: user=app_ventas database=comercial
+2026-11-05 18:05:10.340 CST [4120] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG: statement: UPDATE clientes SET rfc = 'GAMA780912XXX' WHERE id = 3
+2026-11-05 18:09:45.008 CST [4132] user=soporte_ana db=comercial app=psql client=127.0.0.1 FATAL: password authentication failed for user "soporte_ana"
+2026-11-05 18:12:01.554 CST [4140] user=postgres db=comercial app=psql client=[local] LOG: statement: GRANT SELECT ON clientes TO soporte_ana
+2026-11-05 18:13:18.201 CST [4140] user=postgres db=comercial app=psql client=[local] LOG: statement: CREATE TABLE public.prueba_auditoria(id integer)
+2026-11-05 18:14:33.991 CST [4140] user=postgres db=comercial app=psql client=[local] LOG: statement: DROP TABLE public.prueba_auditoria
+2026-11-05 18:17:05.002 CST [4150] user=soporte_ana db=comercial app=psql client=127.0.0.1 ERROR: permission denied for table clientes
+2026-11-05 18:20:41.100 CST [4160] user=postgres db=comercial app=psql client=[local] LOG: statement: ALTER SYSTEM SET log_statement = 'mod'
+2026-11-05 18:25:03.877 CST [4172] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG: statement: UPDATE clientes SET rfc = 'GAMA780912GHI' WHERE id = 3
+2026-11-05 18:25:03.881 CST [4172] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG: AUDIT: UPDATE clientes id=3; old.rfc=GAMA780912XXX; new.rfc=GAMA780912GHI
+2026-11-05 18:27:15.001 CST [4180] user=postgres db=comercial app=psql client=[local] LOG: statement: ALTER TABLE clientes DISABLE TRIGGER trg_auditoria_clientes
+2026-11-05 18:28:00.010 CST [4180] user=postgres db=comercial app=psql client=[local] LOG: statement: ALTER TABLE clientes ENABLE TRIGGER trg_auditoria_clientes
