@@ -1,0 +1,8 @@
+2026-10-25 22:50:09.341 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: REVOKE UPDATE ON clientes FROM soporte_ana
+2026-10-25 22:50:09.367 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: GRANT UPDATE ON clientes TO app_ventas
+2026-10-25 22:50:09.372 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: ALTER TABLE clientes ADD COLUMN segmento VARCHAR(20)
+2026-10-25 22:50:09.375 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: CREATE ROLE rol_temporal LOGIN PASSWORD '<REDACTED>'
+2026-10-25 22:50:53.460 -07 [2140] user=app_ventas db=comercial app=ventas client=127.0.0.1 LOG: statement: ALTER TABLE clientes DISABLE TRIGGER trg_auditoria_clientes
+2026-10-25 22:50:53.549 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: ALTER TABLE clientes DISABLE TRIGGER trg_auditoria_clientes
+2026-10-25 22:50:53.554 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: ALTER TABLE clientes ENABLE TRIGGER trg_auditoria_clientes
+2026-10-25 22:54:26.533 -07 [2140] user=postgres db=comercial app=psql client=local LOG: statement: ALTER TABLE clientes ADD COLUMN canal_alta VARCHAR(20)

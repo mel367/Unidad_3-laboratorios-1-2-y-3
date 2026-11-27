@@ -1,0 +1,12 @@
+columna,tipo,longitud,acepta_nulos,descripcion,clasificacion,finalidad,control_aplicado,cambios_auditados,regla_calidad
+id,bigint,,NO,Identificador interno del cliente. Generado por el sistema.,Interno,Identificación,PK,Sí,No nulo y único
+nombre,character varying,120,NO,Nombre completo del cliente. Dato personal identificador directo.,Dato personal,Atención y operación comercial,Acceso restringido,Sí,No vacío
+correo,character varying,150,NO,Correo de contacto. Dato personal.,Dato personal,Notificaciones,Vista restringida y validación,Sí,Formato y unicidad normalizada
+telefono,character varying,20,YES,Teléfono de contacto. Dato personal.,Dato personal,Contacto,Acceso restringido,Sí,Longitud válida
+rfc,character varying,13,YES,RFC del cliente. Dato personal. Uso: facturación.,Dato personal,Facturación,Vista enmascarada para soporte,Sí,Formato RFC y validación documental
+edad,integer,,YES,Edad en años cumplidos. Dato personal.,Dato personal,Analítica agregada,Minimización,Sí,Rango operativo 18-120
+ciudad,character varying,80,YES,Ciudad de residencia o ubicación declarada.,Dato personal indirecto,Segmentación geográfica,Acceso por función,Sí,Catálogo de localidades
+codigo_postal,character varying,5,YES,Código postal asociado a ubicación declarada.,Dato personal indirecto,Cobertura y facturación,Acceso restringido,Sí,Cinco dígitos
+fecha_alta,date,,NO,Fecha de incorporación del cliente.,Dato operativo,Antigüedad y trazabilidad,Generación controlada,Sí,Fecha válida y no futura
+segmento,character varying,20,YES,Clasificación comercial asignada al cliente.,Dato comercial interno,Segmentación,Autorización comercial,Sí,Valor de catálogo
+canal_alta,character varying,20,YES,Canal por el que se registró el cliente.,Dato comercial interno,Origen de alta,Cambio CAM-2026-014,Sí,Valor de catálogo

@@ -1,0 +1,8 @@
+Salida de referencia — disparadores no internos
+
+       tgname        | tgenabled |       tgrelid
+---------------------+-----------+----------------------
+ trg_auditoria_clientes | O       | clientes
+(1 row)
+
+O = habilitado para operaciones ordinarias. Confirmar el estado actual en el servidor.

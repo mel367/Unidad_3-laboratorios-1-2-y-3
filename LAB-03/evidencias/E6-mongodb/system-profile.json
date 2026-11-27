@@ -1,0 +1,37 @@
+[
+  {
+    "op": "query",
+    "ns": "comercial.clientes",
+    "command": {
+      "find": "clientes",
+      "filter": {
+        "segmento": "minorista"
+      }
+    },
+    "millis": 3,
+    "ts": "2026-10-25T22:51:02Z",
+    "user": "app_tienda"
+  },
+  {
+    "op": "update",
+    "ns": "comercial.clientes",
+    "command": {
+      "update": "clientes",
+      "updates": [
+        {
+          "q": {
+            "_id": 7
+          },
+          "u": {
+            "$set": {
+              "ciudad": "Culiacán"
+            }
+          }
+        }
+      ]
+    },
+    "millis": 5,
+    "ts": "2026-10-25T22:52:14Z",
+    "user": "admin"
+  }
+]

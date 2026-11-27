@@ -1,0 +1,10 @@
+Salida de referencia — muestra limitada a metadatos
+
+ id_evento |          momento           | usuario_sesion | aplicacion | operacion | id_cliente
+-----------+----------------------------+----------------+------------+-----------+------------
+        18 | 2026-10-25 22:54:27.102-07 | postgres       | psql       | UPDATE    |          7
+        17 | 2026-10-25 22:54:26.980-07 | app_ventas     | ventas     | INSERT    |          8
+        16 | 2026-10-25 22:54:26.701-07 | postgres       | psql       | UPDATE    |          3
+(3 rows)
+
+La consulta del laboratorio limita la exposición: no muestra valores_antes ni valores_despues.
